@@ -6,7 +6,11 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
-import { BedDouble, CarFront, CarTaxiFront, FerrisWheel, Plane } from "lucide-react";
+import {
+  BedDouble,
+  Globe,
+  TrendingUp,
+} from "lucide-react";
 
 interface Example {
   name: string;
@@ -17,28 +21,18 @@ interface Example {
 const examples: Example[] = [
   {
     name: "Stays",
-    href: "/examples/mail",
+    href: "/",
     icon: <BedDouble size={18} className="mr-2" />,
   },
   {
-    name: "Flights",
-    href: "/examples/dashboard",
-    icon: <Plane size={18} className="mr-2" />,
+    name: "Trending",
+    href: "#trending",
+    icon: <TrendingUp size={18} className="mr-2" />,
   },
   {
-    name: "Cards",
-    href: "/examples/cards",
-    icon: <CarFront size={18} className="mr-2" />,
-  },
-  {
-    name: "Attractions",
-    href: "/examples/cards",
-    icon: <FerrisWheel size={18} className="mr-2" />,
-  },
-  {
-    name: "airport taxi",
-    href: "/examples/cards",
-    icon: <CarTaxiFront size={18} className="mr-2" />,
+    name: "Explore",
+    href: "/examples/mail",
+    icon: <Globe size={18} className="mr-2" />,
   },
 ];
 
@@ -53,8 +47,8 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
       <ScrollArea className="max-w-[600px] lg:max-w-none">
         <div className={cn("mb-4 flex items-center", className)} {...props}>
           {examples.map((example, index) => (
-            <Link
-              to={example.href}
+            <a
+              href={example.href}
               key={example.href}
               className={cn(
                 "flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
@@ -66,7 +60,7 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
             >
               {example.icon}
               {example.name}
-            </Link>
+            </a>
           ))}
         </div>
         <ScrollBar orientation="horizontal" className="invisible" />
