@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
+import "./style.css";
 import AuthLayout from "./_auth/AuthLayout";
 import SigninForm from "./_auth/forms/SigninForm";
 import { Toaster } from "./components/ui/toaster";
