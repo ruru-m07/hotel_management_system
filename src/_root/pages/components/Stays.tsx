@@ -3,13 +3,17 @@ import { Card } from "@/components/ui/card";
 import { useUserContext } from "@/context/AuthContext";
 
 const Stays = () => {
-  const { user } = useUserContext();
+  const { user, isAuthenticated } = useUserContext();
 
   return (
     <div>
       <div className="h-[600px] flex  items-center ">
         <div>
-          <h1 className="text-7xl">Where to next, {user?.name}?</h1>
+          {isAuthenticated ? (
+            <h1 className="text-7xl"> Where to next, {user?.name}?</h1>
+          ) : (
+            <h1 className="text-7xl"> Where to next?</h1>
+          )}
           <p className="text-3xl">
             Find exclusive Genius rewards in every corner of the world!
           </p>
