@@ -57,7 +57,6 @@ const SigninForm = () => {
       return;
     }
   };
-
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
@@ -102,14 +101,14 @@ const SigninForm = () => {
           />
 
           {/* <Button type="submit" className="shad-button_primary">
-            {isLoading || isUserLoading ? (
-              <div className="flex-center gap-2">
-                <Loader /> Loading...
-              </div>
-            ) : (
-              "Log in"
-            )}
-          </Button> */}
+          {isLoading || isUserLoading ? (
+            <div className="flex-center gap-2">
+              <Loader /> Loading...
+            </div>
+          ) : (
+            "Log in"
+          )}
+        </Button> */}
           <Button type="submit" className="shad-button_primary">
             Log in
           </Button>
